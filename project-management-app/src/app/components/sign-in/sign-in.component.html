@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="layout1">
+
+  <div class="panda_sign"><img src="../../../assets/images/sign_in.png" alt="panda"></div>
+  <div class="layout">
+    <p>Sign in</p>
+
+    <form>
+      <div class="form_group">
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username" class="form_control" id="username" name="username" required>
+      </div>
+      <div class="form_group">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" class="form_control" id="password" name="password" required
+          minlength="6">
+      </div>
+      <button class="button_register" type="submit">Submit</button>
+      <p>Don't have an account?</p>
+      <button class="button_register">Register</button>
+    </form>
+  </div>
+
+</div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

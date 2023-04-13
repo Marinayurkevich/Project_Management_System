@@ -7,6 +7,8 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 import { HeaderComponent } from './components/header/header.component';
 import { GeneralComponent } from './components/general/general.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { FooterComponent } from './components/footer/footer.component';
     WelcomePageComponent,
     HeaderComponent,
     GeneralComponent,
-    FooterComponent
+    FooterComponent,
+    SignInComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

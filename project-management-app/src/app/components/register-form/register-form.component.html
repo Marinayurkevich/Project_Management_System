@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+
+<div class="layout1">
+
+  <div class="panda_sign"><img src="../../../assets/images/registration.jpg" alt="panda"></div>
+  <div class="layout">
+    <p>Sign up</p>
+    <div class="align_items">
+      <form>
+        <div class="form_group">
+          <label>Username</label>
+          <input class="form_control" name="name" required>
+        </div>
+
+
+        <div class="form_group">
+          <label>Email address</label>
+          <input class="form_control" name="email" required
+            pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+        </div>
+
+        <div class="form_group">
+          <label>Password</label>
+          <input class="form_control" name="password" minlength="6" required>
+        </div>
+
+        <div class="form_group">
+          <label>Confirm your password</label>
+          <input id="password_confirm" class="form_control" name="password_confirm" required>
+        </div>
+
+        <div class="form_group">
+          <button class="button_register" type="submit">Submit</button>
+          <p>Have you got an account?</p>
+          <button class="button_register">Sign in</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>
