@@ -7,31 +7,45 @@
   <div class="layout">
     <p>Sign up</p>
     <div class="align_items">
-      <form>
+      <form #myForm="ngForm" novalidate>
         <div class="form_group">
           <label>Username</label>
-          <input class="form_control" name="name" required>
+          <input class="form_control" name="name" [(ngModel)]="user.name" #name="ngModel" required />
+          <div [hidden]="name.valid || name.untouched" class="alert">
+            Enter your name
+          </div>
         </div>
 
 
         <div class="form_group">
           <label>Email address</label>
-          <input class="form_control" name="email" required
-            pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+          <input class="form_control" name="email" [(ngModel)]="user.email" #email="ngModel" required
+            pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" />
+          <div [hidden]="email.valid || email.untouched" class="alert">
+            Email is not correct
+          </div>
         </div>
-
         <div class="form_group">
           <label>Password</label>
-          <input class="form_control" name="password" minlength="6" required>
+          <input class="form_control" name="password" [(ngModel)]="user.password" #password="ngModel" minlength="6"
+            required>
+          <div [hidden]="password.valid || password.untouched" class="alert">
+            Your password is less than 6 characters
+          </div>
         </div>
 
         <div class="form_group">
           <label>Confirm your password</label>
-          <input id="password_confirm" class="form_control" name="password_confirm" required>
+          <input id="password_confirm" class="form_control" name="password_confirm" [(ngModel)]="user.password_confirm"
+            #password_confirm="ngModel" required>
+          <div [hidden]="password_confirm.valid || password_confirm.untouched" class="alert">
+            Your passwords are not equal
+          </div>
         </div>
 
         <div class="form_group">
-          <button class="button_register" type="submit">Submit</button>
+          <button [disabled]="myForm.invalid" class="button_register" type="submit"
+            (click)="submit(myForm)">Submit</button>
           <p>Have you got an account?</p>
           <button class="button_register" (click)="goToSignIn()">Sign in</button>
         </div>

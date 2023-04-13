@@ -3,12 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
-import { HeaderComponent } from './components/header/header.component';
-import { GeneralComponent } from './components/general/general.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { GeneralComponent } from './components/general/general.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { FormsModule }   from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,11 @@ import { RegisterFormComponent } from './components/register-form/register-form.
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
