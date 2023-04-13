@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent {
+  constructor(
+    private router: Router) { }
 
+  async goToSignIn() {
+    await this.router.navigate(['/login'])
+  }
 }
