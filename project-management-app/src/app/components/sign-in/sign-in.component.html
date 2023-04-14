@@ -6,20 +6,33 @@
   <div class="layout">
     <p>Sign in</p>
 
-    <form>
+    <form #myForm="ngForm" novalidate>
       <div class="form_group">
-        <label for="username">Username</label>
-        <input type="text" placeholder="Username" class="form_control" id="username" name="username" required>
+        <label for="username">Your Login</label>
+        <input class="form_control" name="login" [(ngModel)]="user.login" #login="ngModel" required />
+        <div [hidden]="login.valid || login.untouched" class="alert">
+          Enter your Login
+        </div>
       </div>
+
       <div class="form_group">
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" class="form_control" id="password" name="password" required
-          minlength="6">
+        <label>Password</label>
+        <input class="form_control" name="password" [(ngModel)]="user.password" #password="ngModel" minlength="6"
+          required>
+        <div [hidden]="password.valid || password.untouched" class="alert">
+          Your password is less than 6 characters
+        </div>
       </div>
-      <button class="button_register" type="submit">Submit</button>
-      <p>Don't have an account?</p>
-      <button class="button_register" (click)="goToRegistration()">Register</button>
+
+
+      <div class="form_group">
+        <button [disabled]="myForm.invalid" class="button_register" type="submit"
+          (click)="submit(myForm)">Submit</button>
+          <p>Don't have an account?</p>
+        <button class="button_register" (click)="goToRegistration()">Register</button>
+      </div>
     </form>
+
   </div>
 
 </div>
