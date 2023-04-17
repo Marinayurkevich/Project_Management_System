@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="main">
+  <button class="btn_main" (click)="goToBoard()">Go Board</button>
+  <button class="btn_main" (click)="addBoard()">Add Board</button>
+
+
+  <div class="main-board">
+    <div class="main-block" id="todo">
+      <h2>To Do</h2>
+      <app-board-item></app-board-item>
+    </div>
+
+    <div class="main-block" id="inprogress">
+      <h2>In Progress</h2>
+    </div>
+
+    <div class="main-block" id="done">
+      <h2>Done</h2>
+    </div>
+
+  </div>
+
+
+  <app-footer></app-footer>
+  <router-outlet></router-outlet>

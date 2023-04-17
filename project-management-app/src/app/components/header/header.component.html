@@ -1,11 +1,37 @@
-<!-- HEADER -->
 <div class="header">
-  <div class="logo"><a><img src="../assets/images/Logo1.png" alt="Logo"></a>
+  <div class="logo"><a (click)="goToWelcomePage()"><img src="../assets/images/Logo1.png" alt="Logo"></a>
   </div>
-  <div class="button_container">
+
+  <div class="button_container" *ngIf="router.url=='/'">
     <button class="button_register" routerLink="/login">Sign in</button>
     <button class="button_register" routerLink="/register">Sign up</button>
   </div>
-</div>
-<!-- <router-outlet></router-outlet> -->
 
+  <div class="button_container" *ngIf="router.url=='/register'">
+    <button class="button_register" routerLink="/login">Sign in</button>
+    <button class="button_register" routerLink="/register">Sign up</button>
+  </div>
+
+
+  <div class="button_container" *ngIf="router.url=='/login'">
+    <button class="button_register" routerLink="/login">Sign in</button>
+    <button class="button_register" routerLink="/register">Sign up</button>
+  </div>
+
+
+  <div class="button_container" *ngIf="router.url=='/main'">
+    <button class="btn_board">Create Board</button>
+    <button class="btn_main">User</button>
+  </div>
+
+
+  <div class="button_container" *ngIf="router.url=='/board'">
+    <button class="btn_main" routerLink="/main">&#9668;</button>
+    <button class="btn_main">&#x2718;</button>
+    <button class="btn_board">Delete Board</button>
+    <button class="btn_main">User</button>
+  </div>
+
+
+</div>
+<router-outlet></router-outlet>

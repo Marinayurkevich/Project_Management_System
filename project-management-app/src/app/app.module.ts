@@ -15,6 +15,9 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './components/main/main.component';
+import { BoardComponent } from './components/board/board.component';
+import { BoardItemComponent } from './components/board-item/board-item.component';
 
 
 
@@ -26,7 +29,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     WelcomePageComponent,
     GeneralComponent,
-    SignInComponent
+    SignInComponent,
+    MainComponent,
+    BoardComponent,
+    BoardItemComponent
   ],
   imports: [
     BrowserModule,

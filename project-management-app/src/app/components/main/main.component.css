@@ -1,0 +1,43 @@
+app-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+}
+
+.main {
+  padding-top: 150px;
+  min-width: 320px 0px;
+  min-height: 1000px;
+  background: rgb(243, 238, 173);
+ }
+
+h2 {
+  text-align: center;
+}
+
+.main-board {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.main-block, .board_item {
+  padding: 0.6rem;
+  width: 30%;
+  border-radius: 5px;
+}
+
+
+#todo {
+  background-color: #56c4f7;
+}
+
+#inprogress {
+  background-color: #f7f31d;
+}
+
+#done {
+  background-color: #38d838;
+}
