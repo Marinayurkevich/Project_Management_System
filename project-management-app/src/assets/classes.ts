@@ -1,7 +1,19 @@
-export class User {
+export class newUser {
   constructor(public name: string,
     public login: string,
     public password: string) { }
+}
+
+export class User {
+  constructor(public _id: string,
+    public name: string,
+    public login: string) { }
+}
+
+export class createBoard {
+  constructor(public title: string,
+    public owner: string,
+    public users: string[]) { }
 }
 
 export class Board {
@@ -9,6 +21,13 @@ export class Board {
     public title: string,
     public owner: string,
     public users: string[]) { }
+}
+
+export class BoardList {
+  constructor(public title: string,
+    public description: string,
+    public _id: string,
+    ) { }
 }
 
 export class Column {
@@ -27,7 +46,7 @@ export class Task {
     public columnId: string,
     public description: string,
     public userId: number,
-    public users: string []) { }
+    public users: string[]) { }
 }
 
 export class File {

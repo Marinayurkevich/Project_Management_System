@@ -15,6 +15,7 @@ const routes: Routes = [
   {path:'register', component: RegisterFormComponent},
   {path:'main', component: MainComponent},
   {path:'board', component: BoardComponent},
+  {path:'board/:_id', component: BoardComponent},
   ]
 
 @NgModule({

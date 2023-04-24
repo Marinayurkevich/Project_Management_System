@@ -1,32 +1,25 @@
-/* FOOTER */
+  .footer {
+    background-color:  var(--color--light-green);
+  }
 
-.footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  height: 90px;
-  background-color: #67d61d;
-}
+  .designed {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: nowrap;
+  }
 
-.designed {
-  display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-  flex-wrap: nowrap;
-}
-
-.course_logo {
-  margin-left: 20px;
-  padding-top: 15px;
-}
+  .course_logo {
+    margin-left: 20px;
+    padding-top: 15px;
+  }
 
 
-.designed a img {
-  width: 100px;
-}
+  .designed a img {
+    width: 100px;
+  }
 
 
-.github_logo {
-  height: 50px;
-}
+  .github_logo {
+    height: 50px;
+  }

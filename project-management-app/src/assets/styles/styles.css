@@ -1,7 +1,26 @@
 :root {
-  --color_primary: #F1CDB3;
-  --color-light-xl: #FFFFFF;
-  --color-dark-s: #CDCDCD;
+  --color--light-green: #67d61d;
+  --color--light-yellow: #f7f31d;
+  --color--light-blue: #56c4f7;
+  --color--green-button: #88f323c9;
+
+}
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper_main {
+  min-height: 100%;
+  margin-bottom: -90px;
+}
+
+.footer,
+.footer_place {
+  height: 90px;
 }
 
 h1 {
@@ -39,7 +58,9 @@ p {
   margin: auto 20px auto 0;
 }
 
-button, label, a {
+button,
+label,
+a {
   font-family: 'Chewy';
   font-style: normal;
   font-weight: 100;
@@ -57,13 +78,6 @@ a:hover {
 a:hover {
   cursor: pointer;
 }
-
-
-
-
-
-
-
 
 
 @media (max-width:1200px) {
@@ -96,13 +110,3 @@ a:hover {
     height: 30px;
   }
 }
-
-/*
-@media (max-width:600px) {
-  сделать бургер-меню
-} */
-
-/*
-@media (max-width:500px) {
- footer переделать, изменить шрифт
-} */

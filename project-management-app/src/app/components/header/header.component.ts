@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http';
+import { HttpService } from '../../http.service';
 
 
 @Component({
@@ -9,14 +12,26 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor(
-    public router: Router) {
-  }
+  constructor(public router: Router,
+    private toastr: ToastrService,
+    private http: HttpClient,
+    private httpService: HttpService) { }
+
+
 
   async goToWelcomePage() {
     await this.router.navigate([""])
   }
 
-  showBoardItem = false;
+
+
+  showProfile = false;
+  newBoardCreation = false;
+  showDeleteConfirm = false;
+
+
+  createBoardItem() {
+    this.newBoardCreation = true;
+  }
 
 }

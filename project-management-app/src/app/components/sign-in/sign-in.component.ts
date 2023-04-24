@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../../assets/classes';
+import { newUser } from '../../../assets/classes';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -20,28 +20,33 @@ export class SignInComponent {
     private httpService: HttpService) { }
 
 
-  user: User = new User("", "", "");
+  user: newUser = new newUser("", "", "");
 
   async goToRegistration() {
     await this.router.navigate(['/register'])
   }
 
 
+
   submit(form: NgForm) {
-
-
     this.httpService.postLogin(form)
       .subscribe({
-        next: (data: any) => { console.log(data.token); this.toastr.success("Successeful login"); },
-        error: (error: any) => {
-          //console.log(error);
-          if (error.status === 401 || error.status === 400) {
-            console.log(error.statusCode);
-
-          this.toastr.error(`Error ${error.status}. Authorization error. Try again, please!`);
+        next: (data: any) => {
+          this.toastr.success("Successeful login");
+          if (data.token) {
+            localStorage.setItem('access_token', data.token);
+            this.router.navigate(['/main']);
           }
         },
-
+        error: (error: any) => {
+          if (error.status === 401 || error.status === 400) {
+            this.toastr.error(`Error ${error.status}. Authorization error. Try again, please!`);
+          }
+        },
       });
   }
 }
+
+
+
+

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { newUser } from '../../../assets/classes';
 import { User } from '../../../assets/classes';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
@@ -18,25 +19,39 @@ export class RegisterFormComponent {
   constructor(
     private router: Router,
     private toastr: ToastrService,
-    private http: HttpClient,
     private httpService: HttpService) { }
 
 
-  user: User = new User("", "", "");
-
+  user: newUser = new newUser("", "", "");
+  registeredUser: User = new User("", "", "");
 
 
   async goToSignIn() {
     await this.router.navigate(['/login'])
   }
 
+  done: boolean = false;
+
   submit(form: NgForm) {
 
     this.httpService.postData(form)
       .subscribe({
-        next: (data: any) => { this.toastr.success("Congratulations! You are registered!"); },
+        next: (data: any) => {
+
+          localStorage.setItem('_id', data._id);
+          localStorage.setItem('name', data.name);
+          localStorage.setItem('login', data.login);
+
+          localStorage.setItem('access_token', data.token);
+
+          this.registeredUser._id = data._id;
+          this.registeredUser.name = data.name;
+          this.registeredUser.login = data.login;
+
+          this.done = true;
+          this.toastr.success("Congratulations! You are registered!");
+        },
         error: (error: any) => {
-          console.log(error);
           if (error.status === 409) {
             this.toastr.error("User with this Login is already exist!");
           }
@@ -46,8 +61,6 @@ export class RegisterFormComponent {
         },
 
       });
-
-
 
   }
 }
