@@ -16,7 +16,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
 import { BoardComponent } from './components/board/board.component';
-import { BoardItemComponent } from './components/board-item/board-item.component';
 import { DeleteConfirmComponent } from './components/delete-confirm/delete-confirm.component';
 import { NewBoardCreateComponent } from './components/new-board-create/new-board-create.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -35,7 +34,6 @@ import { RemoveUserComponent } from './components/remove-user/remove-user.compon
     SignInComponent,
     MainComponent,
     BoardComponent,
-    BoardItemComponent,
     DeleteConfirmComponent,
     NewBoardCreateComponent,
     ProfileComponent,
